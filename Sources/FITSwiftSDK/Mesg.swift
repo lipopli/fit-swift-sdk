@@ -77,7 +77,7 @@ open class Mesg: Equatable {
             if(developerFieldDefinition.developerDataIdMesg == nil || developerFieldDefinition.fieldDescriptionMesg == nil) {
                 // 无法解释字段，但仍需跳过它实际占用的字节
                 try stream.skip(Int(developerFieldDefinition.size))
-                return
+                continue
             }
             var devField = getDeveloperField(developerDataIdMesg: developerFieldDefinition.developerDataIdMesg!, fieldDescriptionMesg: developerFieldDefinition.fieldDescriptionMesg!)
             
